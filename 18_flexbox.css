@@ -1,0 +1,120 @@
+.Container
+{
+    display: flex;
+    gap: 5px; /* creates space in between items, not the sides. Better than Margin left+right */
+    flex-wrap: wrap; /* no-wrap by default */
+    /* enables the flex items to go to the next line if there isn't enough space */
+}
+
+#container1
+{
+    /* stretch happens automatically if needed, no need to specify it like so */
+    align-items: stretch;
+    /* stretches height/width (if unspecified) to fit the parent's */
+}
+
+#container2
+{
+    align-items: center;
+    /* aligns each item individually in EACH row */
+}
+#container3
+{
+    align-content: center;
+    /* aligns the WHOLE content, not individual items or rows */
+    /* align-content only works if flex is wrapping */
+}
+
+#container4 {align-items: center;}
+/* individual alignment can be changed to overwrite parent align-items */
+#container4 #box6 {align-self: flex-end;}
+#container4 #box8 {align-self: baseline;}
+
+#box10
+{
+    /** These 3 properties are applied to each child directly instead of through parent  **/
+    flex-grow: 0; /* default value: original size, no growth */
+    flex-shrink: 1;  /* equal shrinking by default, But if something can't grow, it also can't shrink */
+    flex-basis: auto; /* sets it automatically by default */
+    /* these apply to width by default, but if flex-direction's column these apply to height instead */
+}
+#box11 {flex-grow: 9;} /* 9 out of total(9+18) space available */
+#box12 {flex-grow: 18;} /* available space only calculates within growable items */
+
+#box15 {flex-shrink: 1;} /* default value, if all are 1, they shrink at the same rate */
+#box14 {flex-shrink: 15;} /* higher value = shrinks faster */
+#box13 {flex-shrink: 0;} /* this won't shrink anymore */
+
+#line3
+{
+    flex-basis: 800px; /* usually works like a fixed or minimum width */
+    flex-grow: 1;
+    flex-shrink: 0;
+    /* as lines are NOT wrapping here, it can overflow once space is less than basis */
+}
+#line4
+{
+    flex: 1 0 800px; /* shorthand for flex-grow  flex-shrink  flex-shrink */
+    /* if some parameters are missing, it's set automatically (generally by the default values) */
+}
+
+    /** THE END: NO NEED TO LOOK DOWN **/
+
+*
+{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #303030;
+}
+
+.Box1 {background-color: #ff7878;}
+.Box2 {background-color: #55ff96;}
+.Box3 {background-color: #18c2fa;}
+.Box4 {background-color: #fc94eb;}
+.Box5 {background-color: #d2ff55;}
+.Box6 {background-color: #a1b4ff;}
+.Box1, .Box2, .Box3, .Box4, .Box5, .Box6
+{border-radius: 5px;}
+
+.Container
+{
+    width: 95.5%;
+    height: 46.5%;
+    margin: 1%;
+    padding: 1%;
+    border: 2px solid white;
+    background-color: #6c6c6c28;
+    overflow: hidden;
+}
+
+.Line
+{
+    display: flex;
+    gap: 5px;
+    height: auto;
+}
+
+#container1 {flex-wrap: nowrap;}
+#container2, #container3, #container4 {justify-content: center;}
+
+#box1, #box2, #box3
+{
+    max-width: 250px;
+    min-height: 100px;
+}
+#box4, #box7, #box8, #box9
+{
+    width: 300px;
+    height: 100px;
+}
+#box5, #box6
+{
+    width: 100px;
+    height: 50px;
+}
+#box10, #box11, #box12, #box13 {width: 100px;}
+#box15 {min-width: 100px; max-width: 400px;}
+#box14 {min-width: 100px; max-width: 400px;}
+#box13, #box14, #box15 {flex-grow: 1;}

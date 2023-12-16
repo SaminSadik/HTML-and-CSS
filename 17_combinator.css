@@ -1,0 +1,44 @@
+*
+{
+    margin: 10px;
+    padding: 5px;
+    width: fit-content;
+}
+
+body
+{
+    background-color: #303030;
+    color: white;
+}
+
+/*! combinators indicate relationship between selectors */
+/*! Format: selector combinator selector */
+#container1 p /* space is descendant */
+{
+    background-color: darkblue;
+    /* applies to ALL selector2 in selector1 */
+}
+
+#container2 > p /* > is child */
+{
+    background-color: darkblue;
+    /* applies to selector2 that are DIRECT child of selector1 */
+}
+
+#container2 ~ p /* ~ is genral siblings */
+{
+    background-color: darkgreen;
+    /* applies to ALL sibling selector2 of selector1 (below it) */
+}
+
+#container1 + p /* + is adjacent sibling */
+{
+    background-color: darkgreen;
+    /* applies to ONLY the closest sibling selector2 below selector1*/
+}
+
+#container1, #container2 /* , is not a combinator it means and */
+{
+    border: 2px red solid;
+    /* applies to all the selectors separated by comma */
+}

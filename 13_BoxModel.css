@@ -1,0 +1,37 @@
+#box1
+{
+    border: 5px solid black; /* border: size type color */
+    margin: 50px;  /* space outside border */
+    padding: 50px; /* space inside border */
+
+    width: 250px; /* width & height defines the size of the element */
+    height: 25px; /* px is standard pixel size */
+    background-color: antiquewhite;
+}
+
+#box2
+{
+    border: 10px double maroon;
+    margin: 55px 65px 60px 50px; /*when 4 given-> top right bottom left*/
+    /* when 1 size is given, it defines all four sides */
+    padding: 50px 75px; /*when 2 given-> top+bottom  left+right */
+    
+    width: 20.5%;
+    /* % is another unit, it may seem it doesn't work on height */
+    /* if height/width is not specified, it's auto-adjusted based on the other */
+    background-color: cadetblue;
+}
+
+#box3
+{
+    width: 115px; height: 115px;
+    margin-left: 50px; margin-top: 60px;
+    text-align: center; font-size: xx-large;
+    background-color: rgb(241, 241, 241);
+    font-family: sans-serif;
+
+    box-shadow: 3px 3px 6px gray;
+    /* shadow format: horizontal-offset  vertical-offset  blur  color */
+    /* multiple shadows can be added at once, separated by comma */
+    text-shadow: 2px 2px 3px red, -2px -2px 3px aquamarine;
+}

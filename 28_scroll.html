@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Scroll</title>
+    <link rel="stylesheet" href="28_scroll.css">
+</head>
+
+<body>
+
+    <!--! Smooth Scroll (#point1 <-> #point2) -->
+    <div id="point1"> <a href="#point2"> Let's Scroll </a> </div>
+
+    <!--! Functioning Invisible Scrollbar -->
+    <div id="MAGIC">
+        <div id="card2" class="Card"></div> <div id="card3" class="Card"></div>
+        <div id="card2" class="Card"></div> <div id="card3" class="Card"></div>
+    </div>
+
+    <div id="point2"> <a href="#point1"> Smooth Scroll </a></div>
+    
+     <!--! Scroll Snap -->
+    <div id="SNAP">
+        <div id="container1" class="Container"> <!-- up-down direction -->
+            <div id="card1" class="Card"></div>
+            <div id="card2" class="Card"></div>
+            <div id="card1" class="Card"></div>
+        </div>
+        <div id="container3" class="Container"> <!-- all 4 direction -->
+            <div id="card1" class="Card"></div><div id="card3" class="Card"></div><div id="card1" class="Card"></div>
+            <div id="card3" class="Card"></div><div id="card1" class="Card"></div><div id="card3" class="Card"></div>
+            <div id="card1" class="Card"></div><div id="card3" class="Card"></div><div id="card1" class="Card"></div>
+        </div>
+        <div id="container2" class="Container"> <!-- left-right direction -->
+            <div id="card1" class="Card"></div>
+            <div id="card2" class="Card"></div>
+            <div id="card1" class="Card"></div>
+        </div>
+    </div>
+
+</body>
+</html>

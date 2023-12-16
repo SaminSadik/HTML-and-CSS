@@ -1,0 +1,133 @@
+.GRID {display: grid;} /* first & foremost */
+
+#box1
+{
+    grid-template-rows: 160px 160px 160px 160px 160px;
+    /* declare how many rows & columns as well as size of each */
+    grid-template-columns: 160px 160px 160px 160px 160px;
+}
+#item1
+{
+    /* row value range: 1 to (no. of specified rows + 1) */
+    grid-row-start: 1;      /* y of left line */
+    grid-row-end: 3;        /* y of right line */
+    grid-column-start: 1;   /* x of left line */
+    grid-column-end: 5;     /* x of right line */
+    /*columns value range: 1 to (no. of columns + 1) */
+    
+}
+#item2
+{
+    grid-row: span 2;
+    /* spans specific numbers of rows/colums */
+    grid-column: span 2;
+    /* problems of span:
+    lets later items go ahead if does't get enough space to span;
+    will rather overflow, than get overriden, unlike others */
+}
+#item3
+{
+    grid-row: 1 / 3; /* shorthand: grid-row-start / grid-row-end */
+    grid-column: 5 / 6; /* shorthand: grid-column-start / grid-column-end */
+}
+#item4
+{
+    grid-area: 3 / 3 / 4 / 6;
+    /* shorthand: grid-row-start / grid-column-start / grid-row-end / grid-column-end */
+    z-index: 2;
+}
+#item5
+{
+    grid-area: 2 / 2 / 4 / 4; /* can override other cells */
+    /* which cells is shown on top of which in overrides, can be specified using z-index */
+    z-index: 1; /* by default z-index is 0, so here item4 > item5 > item1 */
+}
+#item6
+{
+    grid-area: 4 / 3 / -1 / -1; /* row/column end -1 mean rest of available space (can't overflow) */
+}
+
+#box1
+{
+    grid-auto-flow: column; /* overflow extension, row by default */
+    grid-auto-columns: 1fr; /* size of overflown cells, 1fr is the default value */
+    /* if flow is row then have to use grid-auto-rows instead */
+}
+
+#box2
+{
+    grid-template-rows: 150px;
+    grid-template-columns: 150px 1fr minmax(300px, 2fr);
+    /* fr takes the remaining space, there're 2 fr here, so 1st one takes 1 out of (2+1) space */
+    /* fr can work with other types of values, but available space is calculated excluding other types */
+    /* minmax() takes min first & max second,
+    it will be max while it can, then it can shrink upto min,
+    after that it won't shrink, rather overflow or others will shrink while possible */
+}
+
+#box3
+{
+    grid-template-rows: repeat(2, 100px);
+    /* if all rows/cols have same size, use repeat(number of repeat, size) */
+    grid-template-columns: repeat(2, 100px);
+    justify-content: space-evenly;
+    /* can be justified & aligned */
+    align-content: space-evenly;
+}
+#item11
+{
+    justify-self: center;
+    /* can overwrite justify & align */
+    align-self: stretch center;
+}
+
+#box4
+{
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* automatically makes the lines needed, but keep empty space instead of taking whole */
+}
+#box5
+{
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* automatically makes the lines needed, and occupies the whole space if possible */
+}
+
+#box6
+{
+    grid-template-rows: repeat(3, 300px);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* auto-fit/auto-fill enable items to wrap instead of overflowing */
+}
+
+#box4, #box5 {grid-gap: 1em;} /* gap between each row & column */
+#box6 {grid-gap: 1em 2em;} /* gap between rows(1st) & columns(2nd) */
+
+    /** THE END: NO NEED TO LOOK DOWN **/
+
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+body
+{   
+    width: 100%;
+    height: 100%;
+    background-color: #303030;
+}
+
+.GRID
+{
+    margin: 5%;
+    border: 3px #ff000034 solid;
+}
+
+.item
+{
+    background-color: #303030;
+    border: 1px #00b7b7 dotted;
+    color: aqua;
+    padding: 5%;
+}
+
+#box3, #box4, #box5 {height: 250px;}

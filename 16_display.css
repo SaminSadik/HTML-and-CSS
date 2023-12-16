@@ -1,0 +1,109 @@
+/** Display: inline, block, inline-block **/
+
+#line1
+{
+    width: 90%;
+    height: 90px;
+    display: inline; /* only take space for its content, height & width can't be set */
+    /* span is inline by default */
+}
+#line2
+{
+    width: 91%;
+    height: 11px;
+    display: inline-block; /* enables inline elements to have custom width & height */
+}
+
+#block1
+{
+    width: 100%;
+    height: 20px;
+    display: block; /* takes a full vertical space even if not needed */
+    /* div is block by default */
+}
+#block2
+{
+    width: 25%;
+    height: 50px;
+    /* unnecessary */ margin-top: 10px; /* for style */
+    display: inline-block; /* enables block elements to not take the whole line */
+}
+
+    /** invisibility **/
+
+#block3
+{
+    width: 25%;
+    height: 50px;
+    display: inline; /* if a block element is forced to be inline, it vanishes */
+}
+#block4
+{
+    width: 100%;
+    height: 1000px;
+    display: none; /* won't exist anymore, & next elements can take its space */
+}
+#block5
+{
+    width: 100%;
+    height: 100px;
+    visibility: hidden; /* still exists & will take space, but won't be visible */
+}
+
+    /** Float **/
+
+.floating
+{
+    background-color: aliceblue;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px; /* if radius is same as height & width, it creates a circle */
+    border: 5px solid;
+}
+#circle1
+{
+    float: left;
+    margin-right: 20px;
+    margin-left: 200px;
+    border-color: red;
+}
+#circle2
+{
+    float: right;
+    margin-right: 200px;
+    margin-left: 15px;
+    border-color: #008cff;
+}
+
+    /** Overflow **/
+
+.Overflown
+{
+    border: 3px solid chocolate;
+    width: 30%;
+    height: 100px;
+    color: aliceblue;
+}
+#box1
+{
+    overflow: visible; /* by default, will overflow */
+}
+#box2
+{
+    overflow: hidden; /* won't display the overflown part, but hidden text can be copied */
+    margin-left: 31%;
+}
+#box3
+{
+    overflow: scroll; /* adds vertical & horizontal scroll bars to show overflown part */
+    margin-left: 62%;
+}
+#box4
+{
+    overflow: auto; /* adds scroll bar according to need */
+    margin-left: 62%;
+}
+
+* { background-color: #555555; color: limegreen; }
+.inLine {background-color: darkblue;}
+.block {background-color: darkred;}

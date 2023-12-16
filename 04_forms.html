@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Forms in HTML</title>
+    </head>
+
+    <body>
+
+        <form>
+
+            <input> <!-- By default it's type is text -->
+            <input type="submit"> <!-- submits the form -->
+            <input type="reset"> <!-- reset all forms -->
+            <hr>
+            <label> Name: </label> <!-- Adds text before form -->
+            <input type="text"> <!--Only selected type of data can be inputted-->
+            <hr>
+            <label for="mail"> e-mail: </label>
+            <!--because of "for", clicking on the label leads to the connected input-->
+            <input type="email" id="mail">
+            <!-- "for" must have the same "id" name as it's directing to -->
+            <hr>
+            <input placeholder="Pas$w0rd" type="password" required minlength="8" maxlength="20">
+            <!--password is not shown when typed-->
+            <!--placeholder is visible until any data is inputted on the box-->
+            <!--iput with "required" attribute must be filled to submit the form-->
+            <!--minlenth & maxlenth attributes fixes a range for the input-->
+            <input type="number" min="1" max="99" value="1">
+            <!--min & max fixes a range for the input ; value is the default input there-->
+            <hr>
+            <input type="tel" placeholder="880-123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}">
+            <!--pattern attribute forces to only be able to input in the indicated pattern-->
+            <input type="date">
+            <hr>
+            <input type="radio" id="o1" name="opt">
+            <label for="o1">Option 1</label><br>
+            <!--any radio having the same "name" are in the same group-->
+            <input type="radio" id="o2" name="opt">
+            <label for="o2">Option 2</label><br>
+            <!--Only one option from any group can be selected-->
+            <input type="radio" id="o3" value="Option 3">
+            <!--options outside groups can be selected without restrictions-->
+            <label for="o3">Option 3</label><br>
+            <!--value is essential in each form to actually use the submitted data-->
+            <hr>
+            <label for="selection"> Select One: </label>
+            <select id="selection"> <!--Defines a dropdown selection-->
+                <option value="1">One</option>
+                <option value="2">Two</option> <!--can only choose 1 of the options-->
+                <option value="3">Three</option>
+            </select>
+            <br>
+            <label for="one">[1] </label>
+            <input type="checkbox" id="one"><br>
+            <label for="two">[2] </label>
+            <input type="checkbox" id="two"><br> <!--Adds a toggle-able checkbox-->
+            <label for="three">[3] </label>
+            <input type="checkbox" id="three"><br>
+            <hr>
+            <textarea placeholder="FEEDBACK" cols="130" rows="5"></textarea>
+            <!--rows & cols attribute defines the size of the textarea/box-->
+            <br>
+            <label for="u1">Upload #1:</label>
+            <input type="file" id="u1"> <br>
+            <!--choose any file to input-->
+            <label for="u2">Upload #2:</label>
+            <input type="file" id="u2" accept="image/png"> <br>
+            <!--choose specific file format for input, given in the accept attribute-->
+            <label for="u3">Upload #3:</label>
+            <input type="file" id="u3" accept="image/png, video/mp4"> <br>
+            <!--choose specific file formats for input, separated by comma-->
+            <hr>
+
+        </form>
+        
+        <!--Following Format is for more functional use, no need to understand it now-->
+        <form action="index.php" method="post" enctype="multipart/form-data"></form>
+
+    </body>
+
+</html>

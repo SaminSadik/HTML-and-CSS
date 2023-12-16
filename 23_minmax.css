@@ -1,0 +1,60 @@
+#box1
+{
+    min-width: 1000px;
+    max-width: 100%;
+}
+
+#box2
+{
+    width: min(88%, 1000px); /* uses the current minimum value at the viewport */
+    /* won't shrink after the minimum value; can't grow unless the minimum value can grow */
+}
+
+#box3
+{
+    width: max(1000px, 69%); /* uses the current maximum value at the viewport */
+    /* won't grow after the maximum value; can't shrink */
+}
+
+#box4 #clamped
+{
+    font-size: clamp(75px, 9vw, 150px);
+    /* will remain middle size untill left or right point is reached */
+    /* won't shrink less than min value(left) & won't grow more than max value(right) */
+}
+
+#box5 #vari {font-size: clamp(50px, 8vw, 100px);}
+#box5 #fixd {font-size: clamp(50px, 9rem, 100px);}
+#box5 #mixd
+{
+    font-size: clamp(50px, 6vw + 0.5rem, 100px);
+    /* a combination of both varible & fixed size unit is best for fluid text */
+    /* math operations inside clamp, min or max don't need calc() */
+}
+
+/* clamp, min or max can be used anywhere that need measurement/size unlike minmax */
+
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+body
+{   
+    width: 100%;
+    height: 100%;
+    background-color: #303030;
+}
+
+.BOX
+{
+    margin: 50px;
+    padding: 10px;
+    color: white;
+    border: 3px lime solid;
+}
+
+#box4 #minimum {font-size: 75px;}
+#box4 #maximum {font-size: 150px;}
+#box4 #average {font-size: 9vw;}
+

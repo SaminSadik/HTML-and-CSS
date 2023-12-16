@@ -1,0 +1,70 @@
+:root /* root pseudo class, targets everything */
+{
+    /* varibale format: --name (no spaces) then colon(:) then value */
+    --clr-Main: #00d5ff;
+    --clr-line: #00ff1a;
+    --clr-pink: #e981d9;
+    --FontSize1: 2em; 
+    --FontSize2: 0.7;
+    --mammamiya: italic;
+}   /* variable makes values reusable & easy to change, especially in a large code */
+
+#Title
+{
+    color: #eff3f6;
+    text-align: center;
+}
+#para2
+{
+    color: #eff3f6;
+    /* in normal format, each time the color needs to be set/changed separately */
+    font-style: var(--mammamiya);
+    /* but by changing the variable definition once, evrywhere it's used can be changed easily */
+}
+
+#para1
+{
+    color: var(--clr-Main);
+    /* use for single values, with reuse potential */
+    font-size: var(--FontSize1); 
+}
+#para3
+{
+    color: var(--clr-Main);
+    /* good practice for large projects, if the browse supports */
+    font-size: calc(var(--FontSize2)*1.5em); /* can do math with calc() */
+}
+
+#para4
+{
+    --clr-Main: var(--clr-line);
+    --mammamiya: normal;
+}
+/* variables can be overwritten, and have different value for local use */
+#para4
+{
+    color: var(--clr-Main);
+    font-style: var(--mammamiya);
+}
+
+#para5
+{
+    color: var(--clr-pink);
+    text-decoration: wavy underline var(--clr-line); /* can be used inside like so */
+}
+
+    /** THE END: NO NEED TO LOOK DOWN **/
+
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+body
+{   
+    width: 100%;
+    height: 100%;
+    background-color: #303030;
+    font-size: 1.5em;
+    text-align: justify;
+}

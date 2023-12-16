@@ -1,0 +1,168 @@
+    /*! Pseudo Classes */ /* selector:pseudo-class (no spaces in between :) */
+
+a:link
+{
+    color: white;
+}
+a:hover
+{
+    color: black;
+    font-size: larger;
+}
+a:active
+{
+    color: aqua;
+}
+a:visited
+{
+    color: #fff9b8 /* overrides the hover & active styles */
+}
+
+.Op {display: none;}
+#dropdown:hover .Op {display: block;} /* can change properties of others */
+/* Probably only works if the to-be-hovered & to-be-changed have a common parent */
+
+#container1 li:hover {background-color: #fcff60; color: blueviolet; font-weight: bold;}
+#container1 li:not(:hover) /* applies for the opposite scenario */
+{
+    background-color: #4c4c4c;
+    list-style: square; /* customizing unordered list symbols */
+}
+
+#container2 li:nth-child(odd) /* targets all child with a specific type like even or odd */
+{
+    background-color: black; /* can be overwritten later */
+}
+#container2 li:nth-child(5) /* target a single child */ 
+{
+    background-color: darkslateblue; /* lower code has higher priority */
+}
+#container2 li:nth-child(2n) /* apply on every nth(2 here) child, n can be any integer */
+{
+    background-color: rgb(0, 0, 99);
+}
+#container3 li:nth-child(3n+1) /* start from 1 & apply on every 3rd child */
+{
+    background-color: #226c22;
+}
+#container3 li:nth-child(3n-1) /* start from 3-1=2 & apply on every nth(3 here) child */
+{
+    background-color: #164d4d;
+}
+
+button:has(a) /* targets all selector2 in selector1 */
+{
+    border: 2px black solid;
+}
+.Container:has(.List3) /* can target classes as well */
+{
+    color: #00fff2;
+}
+
+#container4 :is(h2, #Lorem1, li) /* target multiple selectors under same selector */
+{
+    font-family: Georgia; /* must have a space before :is() */
+}
+
+    /*! Pseudo Elements */ /* selector::pseudo-element (no spaces in between) */
+
+#Title::first-letter /* only the 1st letter of the target element */
+{
+    font-size: 2em; /* 200% */
+    color: aqua;
+}
+#Lorem1::first-line /* anything that's in 1st line, even if the line shrinks/grows with display size */
+{
+    color: aqua; 
+    font-style: italic;
+}
+#Lorem1::selection /* anything that is seleected */
+{
+    background-color: black;
+    color: lime;
+}
+#List li::marker /* another way of changing list symbol */
+{
+    content: " ☑ ";
+    color: yellow;
+}
+/* add content in string form Before or After: */
+#List li::before 
+{
+    content: "Option "; /* can't be selected as text unlike original content */
+    color: lightblue;
+}
+#i1::after {content: " 🔴";}
+#i2::after {content: " 🟢";}
+#i3::after {content: " 🔵";}
+/* these contents scale with the original */
+
+    /** THE END: NO NEED TO LOOK BELOW **/
+
+body
+{   
+    width: 100%;
+    height: 100%;
+    background-color: #303030;
+    color: white;
+}
+button
+{
+    min-width: 100px;
+    min-height: 50px;
+    margin: 8px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: large;
+    background-color: #ff6f6f;
+}
+#button1 a {text-decoration: none;}
+.Container
+{
+    width: 120px;
+    border: 2px lime solid;
+    margin: 10px;
+}
+#container4
+{
+    width: 69%;
+    height: fit-content;
+    padding: 15px;
+    text-align: justify;
+}
+#List li { font-size: x-large;}
+#menu
+{
+    width: 120px;
+    height: 20px;
+    background-color: gainsboro;
+    color: black;
+    border-radius: 3px;
+    margin: 5px;
+    padding: 5px;
+    font-size: larger;
+    text-align: center;
+    display: inline-block;
+}
+#dropdown
+{
+    display: inline-block;
+    position: absolute;
+    left: 60%;
+    top: 18px;
+}
+.Op
+{
+    background-color: lightskyblue;
+    border-radius: 2px;
+    margin-left: 35px;
+    width: fit-content;
+    color: black;
+    font-size: large;
+    font-weight: bold;
+}
+.block
+{
+    display: flex;
+    flex-wrap: wrap;
+}

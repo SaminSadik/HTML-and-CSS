@@ -1,0 +1,118 @@
+#container1 #box1
+{
+    transform: translateX(-50px);
+    /* move in x-axis, +ve means move right, -ve means move left */
+}
+#container1 #box2
+{
+    transform: translateY(80%);
+    /* move in x-axis, +ve means move down, -ve means move up */
+    /* percentage is based on the element's size not the container's */
+}
+#container1 #box3
+{
+    transform: translate(100px, -50%); /* shprthand translate(x, y) */
+    /* if just one value's given, it's considered for the main axis (x) only */
+}
+#container2 #box2 
+{
+    transform: rotateX(115deg); /* rotate on the x-axis */
+}
+#container2 #box1
+{
+    transform: rotateY(91deg); /* rotate on the y-axis */
+    /* 90deg can't be seen for neither X nor Y rotation */
+}
+#container2 #box3
+{
+    transform: rotate(180deg, 180deg); /* shorthand rotate(x, y) */
+}
+#container2 #box4
+{
+    transform: rotateZ(45deg); /* rotate on the z-axis */
+}
+#container3 #box3
+{
+    transform: skewX(89deg); /* skew in x-axis */
+    /* 90deg can't be seen for neither X nor Y axis */
+}
+#container3 #box2
+{
+    transform: skewY(360deg); /* skew in y-axis */
+}
+#container3 #box1
+{
+    transform: skew(45deg, 15deg); /* shorthand skew(x, y) */
+}
+#container4 #box1
+{
+    transform: scaleX(2); /* scale up in x-axis (stretch sideways) */
+}
+#container4 #box3
+{
+    transform: scaleY(0.25); /* scale down in y-axis (stretch updown) */
+}
+#container4 #box2
+{
+    transform: scale(0.5, 1.5); /* shorthand scale(x, y) */
+    /* every parameter of scale is /100, meaning 1 = 100 and below 1 means shrink */
+}
+.pic
+{
+    /* can be applied to a whole class */ /* can be applied to a images */
+    transform: scale(0.75) rotateZ(-45deg) skew(175deg);
+    /* multiple transformations can be done together like this */
+}
+
+    /** THE END: NO NEED TO LOOK BELOW **/
+
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+body
+{   
+    width: 100%;
+    height: 100%;
+    background-color: #303030;
+}
+
+.Container
+{
+    width: 98%;
+    height: 203px;
+    margin: 1%;
+    border: 2px solid white;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+#box1 {background-color: #ff7878;}
+#box2 {background-color: #55ff96;}
+#box3 {background-color: #18c2fa;}
+#box4 {background-color: #faff96;}
+
+.Box
+{
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    border: 2px black solid;
+    font-size: xx-large;
+    text-align: center;
+    line-height: 2em;
+}
+#container4 .Box
+{
+    width: 100px;
+    height: 100px;
+}
+#container4, #container5
+{
+    justify-content: space-evenly;
+    align-items: center;
+}
+#container5 {height: 100%;}

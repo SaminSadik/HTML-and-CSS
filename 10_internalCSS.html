@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Internal & Inline CSS </title>
+        <style>
+            body{
+                color: green;
+                text-align: center;
+            } /* Target a whole tag */
+            .para{
+                color: red;
+                text-align: left;
+            }  /* Target a class with dot(.) */
+            #para{
+                color: blue;
+            } /* Target an id with hash(#) */
+        </style>
+    </head>
+
+    <body>
+        <h2 style="color: brown;">
+            This is an Inline CSS with style attribute, <!--  -->
+        </h2>
+        <h3 style="color: navy;">
+            Only use when a little CSS is needed in some element. <!--  -->
+        </h3> <hr>
+
+        <h1> This is an internal CSS with style tag </h1> <!--  -->
+        <p><u> Which is generally not used </u></p> <br> <!--  -->
+        <pre class="para">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Tempore iusto id perspiciatis laboriosam itaque, sunt atque harum voluptatibus.
+            Maxime officiis quos neque expedita excepturi natus quasi nam? Architecto, cupiditate magnam.
+        </pre>
+        <pre id="para" class="para">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Esse a necessitatibus aspernatur suscipit velit rem, 
+            non provident sequi dolores eligendi vero quibusdam nam, 
+            voluptatem culpa consectetur ipsam nobis corrupti nesciunt?
+        </pre>
+
+    </body>
+</html>

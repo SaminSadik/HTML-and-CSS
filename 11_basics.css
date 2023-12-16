@@ -1,0 +1,27 @@
+/* CSS basic targetting & hierarchy: */
+
+body /* Directly target all tags of that tagName */
+{
+    background-color: grey;
+    font-size: large;
+} /* tags have Lowest priority, can be overriden by class/id */
+
+#p1 /* id is targetted by hash(#)idName */
+{
+    color: greenyellow;
+} /* id has most priority, class can be overriden by id despite its position */
+
+.para { /* class is targetted by dot(.)className */
+    color: beige;
+} /* class has medium priority, unlike id it can target multiple tags */
+
+.para {
+    color: aqua;
+} /*later call of the same tag/class/id overrides its previous calls*/
+
+#p4 {
+    color: darkgray;
+    font-size: larger;
+}
+/* later call(s) only overrides the duplicates, not everything in prev call(s) */
+#p4 { color: bisque; }

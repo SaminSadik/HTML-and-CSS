@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Lists in HTML</title>
+    </head>
+
+    <body>
+        
+        <!-- Ordered List: By default 1,2,3,... order -->
+        <ol>
+            <li> First item </li>
+            <li> Second item </li>
+            <li> Third item </li>
+        </ol>
+
+        <!-- Unordered List: By defualt bulletpoints -->
+        <ul>
+            <li> Maybe 4th item </li>
+            <li> Probably 5th item </li>
+            <li> Technically 6th item </li>
+        </ul>
+
+        <!-- Description List: Doesn't mark but maintains title & description-->
+        <dl>
+            <dt> Topic No. 1 </dt> <!-- Title of an item of the list -->
+            <dd> <!-- Description of the last title item of the list -->
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Eius aperiam numquam ducimus delectus doloremque, repellendus consequuntur sequi dolore modi!
+                Hic provident similique eaque molestias eligendi asperiores itaque assumenda sunt fugiat?
+            </dd>
+            <dt> Topic No. 2 </dt>
+            <dd>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> Odio magni ipsum,
+                adipisci inventore cupiditate asperiores numquam pariatur aspernatur atque! <br>
+                Dolore laborum rerum sapiente dolorum placeat quos est nobis exercitationem pariatur?
+            </dd>
+            <dt> Topic No. 3 </dt>
+            <dd>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta rerum qui ut eligendi adipisci voluptas rem,
+                dolor officia assumenda ad eos nisi molestias? Quae recusandae amet aliquid? Animi, quo cum!
+            </dd>
+        </dl>
+
+        <!-- Nested Lists -->
+        <h3><u>List of Lists (Web Development Edition)</u></h3>
+        <ol>
+            <li><dl>
+                <dt>HTML (Hypertext Markup Language)</dt>
+                <!--d.list can have no description-->
+            </dl></li>
+            <li><dl>
+                <dt>CSS</dt>
+                <dd>
+                    CSS is Cascading Style Sheets, it's a styling language. <br>
+                    Just Like HTML, it is not a "Real" Programming Language. <br>
+                    <ol>
+                        <li>Tailwind</li>
+                        <li>Bootstrap</li>
+                    </ol>
+                </dd>
+            </dl></li>
+            <li>
+                JavaScript
+                <ul>
+                    <li>React</li> <!--Nested u.list orders with holo-dots by default -->
+                    <li>Angular</li>
+                </ul>
+            </li>
+        </ol>
+
+    </body>
+</html>

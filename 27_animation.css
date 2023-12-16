@@ -1,0 +1,80 @@
+@keyframes aniName
+{
+    from {transform: translateY(-300px);}
+    to {transform: translateY(0);}
+}
+#item1
+{
+    /* without name & duration, animation won't work */
+    animation-name: aniName; /* mandatory */
+    animation-duration: 1s; /* mandatory */
+    animation-timing-function: ease; /* ease, linear, ease - in,out,in-out */
+    animation-delay: 0s; /* after how much time the animation starts, 0 means instantly */
+    animation-iteration-count: 1; /* number of times it will animate, can also be infinite */
+    animation-direction: normal; /* normal(default), reverse, alternate-reverse */
+    animation-fill-mode: none; /* none(default), forwards, backwards, both */
+    /** shorthand for the above 7 lines **/
+    animation: aniName 1s ease 0s 1 normal none;
+    /* the following line works the same as above */
+    animation: aniName 1s;
+    /* any unspecified parameter gets its default value, order doesn't matter much */
+}
+
+@keyframes rotatez
+{
+    to {transform: rotateZ(360deg);}
+    /* similarly only from{} can be used as well */
+}
+#item2
+{
+    animation: rotatez 60s 1s; /* 1st time parameter is always duration */
+    animation-timing-function: steps(60); /* like a stock animation */
+}
+
+@keyframes hovColor
+{
+    /* on n-th % of duration animate from the previous state */
+    20% {background-color: transparent;}
+    40% {background-color: #7080906d;}
+    60% {background-color: aqua;}
+    100% {background-color: slategrey;}
+}
+#item3:hover {animation: hovColor 5s 5 linear;} /* works with pseudo classes */
+
+@keyframes Blinkin
+{
+    50% /* does the animation in this % of the duration */
+    {
+        transform: scale(1.25, 1.25);
+        border-radius: 200px;
+    } /* the remaining duration is used to revert to the original state */
+}
+#item4 {animation: Blinkin 2s infinite;} /* keeps animating infinitely */
+
+
+/** Utility Classes can be made for Reusable animation presets **/
+.Animate /* mutiple classes can be given to elements in html */
+{
+    animation: bounceUtil 3s;
+}
+/* each additional class can add more animation properties like this */
+.Behave:active
+{
+    animation: Glow 2s;
+    animation-timing-function: cubic-bezier(0.1, 0.5, 0.8, 0.7); /* custom */
+}
+.Animate.INF /* these properties will work only in elements with both classes */
+{
+    animation-iteration-count: infinite;
+}
+@keyframes Glow
+{
+    50% {box-shadow: 0 0 25px white;}
+}
+@keyframes bounceUtil
+{
+    0%, 20%, 50%, 80%, 100%
+    {transform: translateY(0);} /* repeates can be decreased with comma */
+    40% {transform: translateY(-50px);}
+    60% {transform: translateY(-25px);}
+}

@@ -1,0 +1,39 @@
+#item1
+{
+    /* without property & duration, transition won't work */
+    transition-property: transform;
+    transition-duration: 2s;
+    transition-timing-function: ease; /* ease(d), linear, ease - in,out,in-out */
+    transition-delay: 0s; /* after how much time the transition effects, 0 means instantly */
+}
+
+#item2
+{
+    /* shorthand for the above 4 */
+    transition: transform 2s ease 0s;
+    /* the following line works the same as above */
+    transition: transform 2s;
+    /* any unspecified parameter gets its default value automatically */
+}
+
+#item3
+{
+    transition: transform 2s linear, box-shadow 3s;
+    /* target multiple properties separated by comma */
+}
+
+#item4
+{
+    transition: all 3s;
+    /* target all properties with this keyword */
+}
+
+.Item:hover
+{
+    transform: scale(1.5,1.5);
+    background-color: transparent;
+}
+.Item:active
+{
+    box-shadow: 0 0 25px white;
+}

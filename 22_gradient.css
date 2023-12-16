@@ -1,0 +1,128 @@
+    /*! Linear Gradient !*/
+#line1
+{
+    background: linear-gradient(aqua, blue);
+    /* specify atleast 2 colors inside (in any format) */
+}
+#line2
+{
+    background: linear-gradient(to top left, blue, aqua, blue);
+    /* to specify the direction, write "to direction," before the colors */
+}
+#line3
+{
+    background: linear-gradient(115deg, blue, aqua, blue);
+    /* another way to specify direction: write the deg instead of "to direction" */
+}
+#line4
+{
+    background: linear-gradient(cyan 20%, blueviolet 50%, cyan 90%);
+    /* here 20% means 0% to 20% solid aqua(as first), 90% to 100% solid orange(as last) and
+    x% to x% (50 here) solid for any middle color with single value x%, the area in between are gradients */
+}
+#line5
+{
+    background: linear-gradient(gray 20% 40%, darkgray 40% 60%, lightgray 60% 90%);
+    /* empty spaces in start & end are automatically filled with solid instead of gradient
+    as every color started from the end of previous color, there is no scope for gradient */
+}
+#line6
+{
+    background: linear-gradient(lightgray 20% 40%, darkgray 30% 70%, gray 60% 90%);
+    /* earlier color won't spare their space if later color tries to overwrite it */
+}
+
+    /*! Radial Gradient !*/
+#line7
+{
+    background: radial-gradient(aqua 10%, teal 40% 60%, skyblue);
+    /* center starts from 1st color, then one by one does outer radiuses */
+    /* shape is ellipse by default */
+}
+#line8
+{
+    background: radial-gradient(at top, aqua 10%, teal 40% 60%, skyblue);
+    /* origin can be specified before colors */
+}
+#line9
+{
+    background: radial-gradient(circle, aqua, teal, skyblue);
+    /* shape can be specified before colors */
+}
+#line10
+{
+    background: radial-gradient(circle at bottom right, aqua, teal, skyblue);
+    /* origin can be specified after shape without separation */
+}
+
+    /*! Conic Gradient !*/
+#line11
+{
+    background: conic-gradient(red, green, yellow, blue);
+}
+#line12
+{
+    background: conic-gradient(red 0deg 90deg, green 90deg 180deg, yellow 180deg 270deg, blue 270deg);
+    /* angles can be specified with single/position or double/range degree value */
+}
+#line13
+{
+    background: conic-gradient(at 60% 90%, green, lime, yellow, olive);
+    /* origin can be specified with "at x% y%," or "at x%," before colors, default value 50% 50% */
+}
+#line14
+{
+    background: conic-gradient(from 90deg, orange, yellow, lime, green);
+    /* specity from which degree the 1st color starts from (before colors) */
+}
+#line15
+{
+    background: conic-gradient(from 270deg at 40% 40%, orange, yellow, lime, green);
+    /* 'from_' and 'at_' can be combined separated by a space only & used in the same conic  */
+}
+
+    /*! Repeating Gradients !*/
+#line16
+{
+    background: repeating-linear-gradient(cyan, blue, cyan);
+    /* will work like a non-repeating gradient if no positions are given */
+}
+#line17
+{
+    background: repeating-linear-gradient(cyan 20px, blue 20px 40px, cyan 50px 71px);
+    /* fills the container space by repeating the same pattern */
+}
+#line18
+{
+    background: repeating-radial-gradient(circle, blue 20px, green 20px 40px, red 40px 60px, blue 60px 70px);
+}
+/* repeating vs nonrmal Gradient */
+#line19
+{
+    background: radial-gradient(circle, blue 20px, green 20px 40px, red 40px 60px, blue 60px 70px);
+}
+#line20
+{
+    background: repeating-conic-gradient(from 45deg at 10%, cyan 10deg, skyblue 30deg 40deg, aqua 40deg 50deg);
+}
+
+    /** THE END: NO NEED TO LOOK DOWN **/
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+body
+{   
+    width: 100%;
+    height: 100%;
+}
+
+.Line
+{
+    width: 97%;
+    height: 475px;
+    margin: 1%;
+    border: 5px black solid;
+}
+

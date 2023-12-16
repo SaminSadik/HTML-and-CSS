@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Images, Videos & Audio</title>
+    </head>
+
+    <body>
+
+        <!-- src attribute defines the source -->
+
+        <img src="./media/HTML_CSS_JS.png" height="550px">
+        <!-- if one of height/width is given, the other is auto adjusted-->
+        <img src="./media/HTML_CSS_JS.png" width="550px">
+
+        <img src="./media/HTML.png" title="HTML logo">
+        <!--title shows on hover as well as when the image is broken-->
+        <img src="./media/HTML.jpg" title="HTML logo">
+        <img src="./media/HTML.jpg" alt="HTML logo">
+        <!--only shows the alt text instead of image when the image is broken-->
+
+        <a href="https://www.freecodecamp.org/news/html-css-and-javascript-explained-for-beginners/">
+            <!-- img can be linked using normal anchor tag -->
+            <img src="https://media.giphy.com/media/Hbc0vXRf7LsADdQKWo/giphy.gif" height="200px">
+            <!-- src can be an external link -->
+        </a> <!-- gif can be added as img -->
+
+
+        <video src="./media/hax.mp4" height="465px" controls autoplay muted loop></video>
+        <!-- controls attribute enable the video to be playable / accessable -->
+        <!-- autoplay attribute stars playing the video whenever webpage is loaded -->
+        <!-- muted attribute make the video first start as muted -->
+        <!-- loop attribute starts over the video whenever it's finished -->
+        
+        <audio src="./media/C418-Sweden.mp3" controls></audio>
+        <audio controls loop muted autoplay>
+            <source src="./media/C418-Sweden.mp3" type="audio/mp3"> <!--same format works for videos-->
+        </audio>
+
+    </body>
+</html>

@@ -1,0 +1,107 @@
+.Container, .Group
+{
+    display: flex; /* always make the parent flex, not the individual items */
+}
+
+#group1
+{
+    flex-direction: row;  /* specifies the General direction of the flex items */
+    justify-content: flex-start; /* Justify determines the Horizontal(width-wise) position */
+    align-items: flex-start; /* align determines the Vertical(height-wise) position */
+    /* these are default properties of direction, justify & align */
+}
+#group2
+{
+    flex-direction: row; /* items are positioned in the row as long as there is space */
+    justify-content: flex-end; /* position items at the Horizontal end of the x-axis */
+    align-items: flex-end; /* position items at the Vertical end of the x-axis */
+}
+
+#group3, #group4 { flex-direction: row-reverse; }  /* main (x) axis is reversed */
+#group4
+{
+    justify-content: flex-end; /* as the x-axis is reversed, flex-end works like flex-start & vice-versa */
+    align-items: flex-end; /* align works vertically, so row-reverse doesn't affect it */
+}
+
+#group5 { flex-direction: column; }  /* top to down direction */
+#group6 { flex-direction: column-reverse; } /* down to top direction */
+
+#group7
+{
+    justify-content: space-around; /* it's like margin left & right together but dynamic */
+    align-items: flex-end;
+}
+#group8 {justify-content: space-evenly;} /* even-space-around: similar but better than space-around imo */
+
+#group9
+{
+    justify-content: center; /* positions in the center of x-axis */
+    align-items: center; /* positions in the center of y-axis */
+}
+#groupX {justify-content: space-between;} /* No space at the start & end */
+
+    /** THE END: NO NEED TO LOOK DOWN **/
+
+*
+{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #303030;
+}
+
+#box1 {background-color: #ff7878;}
+#box2 {background-color: #55ff96;}
+#box3 {background-color: #18c2fa;}
+
+.Box
+{
+    width: 50px;
+    height: 50px;
+    margin: 2px;
+    border-radius: 5px;
+}
+
+.Group
+{
+    width: 98%;
+    height: 48%;
+    margin: 1%;
+}
+
+#group5, #group6
+{
+    width: 48%;
+    height: 98%;
+}
+
+.Canvas
+{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 25px;
+    display: flex;
+}
+
+.Container
+{
+    width: 30%;
+    height: 250px;
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid white;
+    background-color: #6c6c6c28;
+    flex-direction: column;
+}
+#container3{flex-direction: row;}
+
+#canvas /* More On These Later */
+{
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 1%; 
+    align-content: center;
+    justify-content: center;
+}
